@@ -1,6 +1,10 @@
 import pyautogui as py
 import time
-from datetime import datetime, timedelta  
+from datetime import datetime, timedelta
+import os
+
+print(os.getcwd())
+
 
 # automação para canhotos toda segunda feira
 # Geral: gerar e baixar dois pdf's de canhotos no sistema cloud e salvar na pasta de Miguel com a data e nome correto para cada um
