@@ -48,7 +48,7 @@ py.keyUp('shift')
 
 while find == "yes":
     try:
-        contasAReceber = py.locateOnScreen('./assets/contas_a_receber.png', grayscale=True)
+        contasAReceber = py.locateOnScreen('assets/contas_a_receber.png', grayscale=True)
         py.click(contasAReceber.x, contasAReceber.y)
         find = "no"
     except:
