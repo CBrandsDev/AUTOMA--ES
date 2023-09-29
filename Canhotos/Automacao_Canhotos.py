@@ -1,3 +1,5 @@
+# pesquisar o porque o .py não puxa as imagens na hora de rodar a automação
+
 import pyautogui as py
 import time
 from datetime import datetime, timedelta
