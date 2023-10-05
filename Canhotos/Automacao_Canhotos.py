@@ -8,6 +8,7 @@ import os
 print(os.getcwd())
 
 print('save1')
+print('save2')
 
 # automação para canhotos toda segunda feira
 # Geral: gerar e baixar dois pdf's de canhotos no sistema cloud e salvar na pasta de Miguel com a data e nome correto para cada um
