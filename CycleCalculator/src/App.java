@@ -20,10 +20,9 @@ public class App {
 
         // Array de mensagens para a pergunta
         String[] messages = {
-            "Qual foi a data em que desceu a menstruação?",
+            "Qual data o rio de sangue escorreu?",
             "Menina, que dia foi que você menstruou?",
-            "Informe o dia que desceu, por favor.",
-            "Me informe quando foi o último período."
+            "Informe o dia que desceu Mona, por favor"
         };
 
         // Gerando um número aleatório para selecionar a mensagem
