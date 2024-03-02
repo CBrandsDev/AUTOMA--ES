@@ -1,5 +1,10 @@
+import java.util.Scanner;
+
 public class App {
     public static void main(String[] args) {
+        int firstPlayerCollum = 0;
+
+
         int n = 3; // tamanho do tabuleiro 3x3
         char[][] board = new char[n][n];
 
@@ -26,5 +31,9 @@ public class App {
                 System.out.println();
             }
         }
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Tic Tac Toe");
+        System.out.print("First Player Moves:");
+        System.out.print("Select a collum:");
     }
 }
