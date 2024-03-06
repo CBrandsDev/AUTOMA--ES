@@ -33,7 +33,31 @@ public class App {
         }
         Scanner scanner = new Scanner(System.in);
         System.out.print("Tic Tac Toe");
-        System.out.print("First Player Moves:");
-        System.out.print("Select a collum:");
+        System.out.print("First Player Moves:\n");
+        System.out.print("Select a collum (1-3): ");
+        
+        int selectedColumn = scanner.nextInt();
+        
+        while (selectedColumn < 1 || selectedColumn > 3) {
+            System.out.print("Please select a valid column (1-3): ");
+            selectedColumn = scanner.nextInt();
+        }
+        System.out.println("You selected column: " + selectedColumn);
+        System.out.print("First Player Moves:\n");
+        System.out.print("Select a Row (1-3): ");
+
+        int selectedRow = scanner.nextInt();
+
+        while (selectedRow < 1 || selectedRow > 3) {
+            System.out.print("Please select a valid row (1-3): ");
+            selectedRow = scanner.nextInt();
+        }
+        System.out.println("You selected row: " + selectedRow);
+
+        // imprimir o tabuleiro atualizado
+
+        for(int i = 0; i < n; i++) {
+            
+        }
     }
 }
