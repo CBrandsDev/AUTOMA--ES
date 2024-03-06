@@ -8,6 +8,8 @@ public class App {
     Player one = new Player();   
     Player two = new Player();  
 
+    one.getCollumn();
+
 // trocar de player e repetir a função de escolha linha coluna
 
 // verificar se o tabuleiro está completo
