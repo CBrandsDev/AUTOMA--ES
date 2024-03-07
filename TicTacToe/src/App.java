@@ -24,10 +24,13 @@ private static String playGame(Board board) {
     int turnCount = 0;
     int play;
     boolean hasWon = false;
+    String winner = "Tie";
 
     boolean keepPlaying = true;
     while (keepPlaying) {
+        printBoard(board);
         turnCount++;
+
 
         if (turnCount % 2 == 0) {
             currPlayer = O;
@@ -36,15 +39,32 @@ private static String playGame(Board board) {
         }
         System.out.print(currPlayer.getName() + ", make a move (1 - 9)" );
         play = in.nextInt();
-
+        
         hasWon = currPlayer.makePlay(Player.cells[play -1]);
+        
+        // fazer a detecção do tabuleiro
+        if (hasWon) {
+            winner = currPlayer.getName();
+            keepPlaying = false;
+        }
+        
+        // verificar se o tabuleiro está completo
+        if (turnCount == 9) {
+            keepPlaying = false;
+        }
     }
-    return null;
-
-    // verificar se o tabuleiro está completo
-    
-    // fazer a detecção do tabuleiro
+    return winner;
     
     // definir vencedores
+
+    private static void printWinner(String winner) {
+        if (winner.equals("Tie")) {
+            System.out.println("It's a tie!");
+        } else {
+            System.out.println(winner + " won!");
+        }
+    }
+    
+    
 }
 }
