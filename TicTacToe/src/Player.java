@@ -5,30 +5,43 @@ public class Player {
 
     private String name;
     private Scanner nm;
-    private int selectedCollumn;
-    private int selectedRow;
-
-    private Player() {
+    private int position;
+    
+    public Player(String string, Board board) {
     }
 
     public Player(String name) {
         this.name = name;
         nm = new Scanner(System.in);
-        this.selectedRow = -1;
-        this.selectedCollumn = -1;
+        this.position = -1;
     }
 
-    public void getCollumn() {
+    public String getName() {
+        return this.name;
+    }
+    public Scanner getNm() {
+        return this.nm;
+    }
+    public int getPosition() {
+        return this.position;
+    }
+    
+
+    public Class<Integer> getPosition(Player position) {
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Select a collumn (1 - 3): ");
-        float selectedCollumn = scanner.nextInt();
-        while (selectedCollumn < 1 || selectedCollumn > 3) {
-            System.out.println("Please selected a valid collumn (1-3): ");
-            selectedCollumn = scanner.nextInt();
-        }
+        float position = scanner.nextInt();
+        while (position < 1 || position > 9) {
+            System.out.print("Select a position (1 - 9): ");
+            try {
+                position = scanner.nextInt();
 
-        return selectedCollumn;
+            } catch (NumberFormatException e) {
+                System.out.println("Insert a valid number (1 - 9): ");
+            }
+        }
+        return int getPosition();
+
     }
     
 

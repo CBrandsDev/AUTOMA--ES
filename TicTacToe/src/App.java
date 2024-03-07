@@ -2,23 +2,49 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-    // criar o tabuleiro na mesa
-        
-    // mandar o player escolher qual coluna e qual linha
-    Player one = new Player();   
-    Player two = new Player();  
+    // Criar o jogo, o tabuleiro e o vencedor
+    Board board = new Board();
+    printBoard(board);
+    String winner = playGame(board);
+    printWinner(winner);    
+}
 
-    one.getCollumn();
+private static String playGame(Board board) {
+    return null;
+    // criar os objetos players
+    
+    Player X = new Player("X", board);   
+    Player O = new Player("O", board);  
+    
+    Scanner in = new Scanner(System.in);
+    
+    // trocar de player e repetir a função de escolha linha coluna
 
-// trocar de player e repetir a função de escolha linha coluna
+    Player currPlayer;
+    int turnCount = 0;
+    int play;
+    boolean hasWon = false;
 
-// verificar se o tabuleiro está completo
+    boolean keepPlaying = true;
+    while (keepPlaying) {
+        turnCount++;
 
-// fazer a detecção do tabuleiro
+        if (turnCount % 2 == 0) {
+            currPlayer = O;
+        } else {
+            currPlayer = X;
+        }
+        System.out.print(currPlayer.getName() + ", make a move (1 - 9)" );
+        play = in.nextInt();
 
-// definir vencedores
-
-
-
+        hasWon = currPlayer.makePlay(Player.cells[play -1]);
     }
+    return null;
+
+    // verificar se o tabuleiro está completo
+    
+    // fazer a detecção do tabuleiro
+    
+    // definir vencedores
+}
 }
