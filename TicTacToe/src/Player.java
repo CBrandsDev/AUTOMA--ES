@@ -9,7 +9,6 @@ public class Player {
     private int selectedRow;
 
     private Player() {
-
     }
 
     public Player(String name) {
@@ -22,10 +21,10 @@ public class Player {
     public void getCollumn() {
         
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Selecione uma coluna (1 - 3): ");
+        System.out.print("Select a collumn (1 - 3): ");
         float selectedCollumn = scanner.nextInt();
         while (selectedCollumn < 1 || selectedCollumn > 3) {
-            System.out.println("Please selected a valid selectedCollumn (1-3): ");
+            System.out.println("Please selected a valid collumn (1-3): ");
             selectedCollumn = scanner.nextInt();
         }
 
