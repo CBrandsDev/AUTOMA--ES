@@ -42,8 +42,8 @@ private static String playGame(Board board) {
         
         hasWon = currPlayer.makePlay(Player.cells[play -1]);
         
-        // fazer a detecção do tabuleiro
         if (hasWon) {
+            // fazer a detecção do tabuleiro
             winner = currPlayer.getName();
             keepPlaying = false;
         }
