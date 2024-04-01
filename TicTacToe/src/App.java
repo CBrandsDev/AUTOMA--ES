@@ -15,6 +15,7 @@ private static String playGame(Board board) {
     
     Player X = new Player("X", board);   
     Player O = new Player("O", board);  
+    Player O = new Player("A", board);  
     
     Scanner in = new Scanner(System.in);
     
