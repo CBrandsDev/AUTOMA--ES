@@ -3,9 +3,8 @@ public class App {
         Prints print = new Prints();
         Code code = new Code();
 
-        print.clean();
-        print.main();
-        code.insertDate();
-        print.clean();
+        code.fertilePeriod();
+        code.menstrualDays();
+        code.nextMenstrual();
     }
 }

@@ -26,6 +26,20 @@ public class Prints {
         System.out.println("      period:       ");
     }
 
+    public void menstrualDays() {
+        System.out.println(" Generally how many ");
+        System.out.println("   days does your   ");
+        System.out.println("    period last?    ");
+        System.out.println("                    ");
+    }
+
+    public void menstrualPeriod() {
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+    }
+
     public void fertile() {
         System.out.println("   Caution on this  ");
         System.out.println("        days        ");

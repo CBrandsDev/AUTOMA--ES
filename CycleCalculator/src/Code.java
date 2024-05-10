@@ -1,20 +1,25 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Code {
+    Prints print = new Prints();
     Scanner sc = new Scanner(System.in);
     SimpleDateFormat sdf = new SimpleDateFormat("dd/MM");
-    private String date;
+    private Date date;
+    private int menstruatedDays;
     private boolean verify;
 
-    public String insertDate() {
+    public Date insertDate() {
+        print.main();
         verify = false; 
+
         while (verify == false) {
 
-            date = sc.nextLine();
-            String dateWithYear = date + "/2024";
+            String userDate = sc.nextLine();
+            String dateWithYear = userDate + "/2024";
 
             try {
                 sdf.setLenient(false);
@@ -24,15 +29,15 @@ public class Code {
                 String[] parts = formattedDate.split("/");
                 int day = Integer.parseInt(parts[0]);
                 int month = Integer.parseInt(parts[1]);
-                String[] userInputParts = date.split("/");
+                String[] userInputParts = userDate.split("/");
                 int userInputDay = Integer.parseInt(userInputParts[0]);
                 int userInputMonth = Integer.parseInt(userInputParts[1]);
                 
                 if (day != userInputDay || month != userInputMonth) {
-                    throw new ParseException("Data inválida", 0);
+                    throw new ParseException("Invalid Date", 0);
                 }
                 
-                System.out.println(date);
+                date = parsedDate;
                 verify = true;
 
             } catch (ParseException e) {
@@ -42,8 +47,27 @@ public class Code {
         return date;
     }
 
-    public String fertilePeriod() {
-        return "";
+    public int menstrualDays() {
+        print.menstrualDays();
+        menstruatedDays = sc.nextInt();
+        return menstruatedDays;
+    } 
+
+    public void fertilePeriod() {
+        date = insertDate();
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, 7);
+        Date datePlusSeven = calendar.getTime();
+
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, 11);
+        Date datePlusEleven = calendar.getTime();
+        
+        print.fertile();
+        System.out.println(sdf.format(datePlusSeven) + "" + sdf.format(datePlusEleven));
     }
+
 
 }
