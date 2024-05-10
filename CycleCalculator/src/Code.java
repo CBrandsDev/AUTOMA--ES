@@ -12,13 +12,14 @@ public class Code {
     private int menstruatedDays;
     private boolean verify;
 
-    public void fertilePeriod() {
+    public void start() {
+        print.clean();
         date = insertDate();
         print.clean();
         int menstrualDay = menstrualDays();
         int plusSeven =  menstrualDay + 7;
         int plusEleven =  menstrualDay + 11;
-        int plusTwentySix =  menstrualDay + 11;
+        int plusTwentySix =  menstrualDay + 26;
 
         Calendar calendar = Calendar.getInstance();
 
@@ -39,7 +40,7 @@ public class Code {
         System.out.println("    " + sdf.format(datePlusSeven) + " a " + sdf.format(datePlusEleven));
         System.out.println("");
         print.redRiver();
-        System.out.println("    " + sdf.format(datePlusTwentySix));
+        System.out.println("        " + sdf.format(datePlusTwentySix));
     }
 
     public Date insertDate() {
