@@ -40,7 +40,7 @@ public class Player {
                 System.out.println("Insert a valid number (1 - 9): ");
             }
         }
-        return int getPosition();
+        return position;
 
     }
     
