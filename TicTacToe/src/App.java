@@ -15,6 +15,7 @@ private static String playGame(Board board) {
     
     Player X = new Player("X", board);   
     Player O = new Player("O", board);  
+    Player O = new Player("A", board);  
     
     Scanner in = new Scanner(System.in);
     
@@ -42,8 +43,8 @@ private static String playGame(Board board) {
         
         hasWon = currPlayer.makePlay(Player.cells[play -1]);
         
-        // fazer a detecção do tabuleiro
         if (hasWon) {
+            // fazer a detecção do tabuleiro
             winner = currPlayer.getName();
             keepPlaying = false;
         }

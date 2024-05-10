@@ -2,12 +2,11 @@ import java.util.Scanner;
 
 public class Player {
 
-
     private String name;
     private Scanner nm;
     private int position;
     
-    public Player(String string, Board board) {
+    public Player() {
     }
 
     public Player(String name) {
@@ -25,6 +24,22 @@ public class Player {
     public int getPosition() {
         return this.position;
     }
+
+    public void move(GameBoard board, Checker checker) [
+        int move;
+
+        while(true) {
+            board.printBoard();
+
+            if (nm.hasNextInt()) {
+                move = nm.nextInt();
+
+                if (!board.isValidposition(move)) {
+                    
+                }
+            }
+        }
+    ]
     
 
     public Class<Integer> getPosition(Player position) {
