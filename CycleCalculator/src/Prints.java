@@ -33,13 +33,6 @@ public class Prints {
         System.out.println("                    ");
     }
 
-    public void menstrualPeriod() {
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-        System.out.println("");
-    }
-
     public void fertile() {
         System.out.println("   Caution on this  ");
         System.out.println("        days        ");

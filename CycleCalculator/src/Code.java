@@ -12,6 +12,36 @@ public class Code {
     private int menstruatedDays;
     private boolean verify;
 
+    public void fertilePeriod() {
+        date = insertDate();
+        print.clean();
+        int menstrualDay = menstrualDays();
+        int plusSeven =  menstrualDay + 7;
+        int plusEleven =  menstrualDay + 11;
+        int plusTwentySix =  menstrualDay + 11;
+
+        Calendar calendar = Calendar.getInstance();
+
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, plusSeven);
+        Date datePlusSeven = calendar.getTime();
+
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, plusEleven);
+        Date datePlusEleven = calendar.getTime();
+
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_YEAR, plusTwentySix);
+        Date datePlusTwentySix = calendar.getTime();
+        
+        print.clean();
+        print.fertile();
+        System.out.println("    " + sdf.format(datePlusSeven) + " a " + sdf.format(datePlusEleven));
+        System.out.println("");
+        print.redRiver();
+        System.out.println("    " + sdf.format(datePlusTwentySix));
+    }
+
     public Date insertDate() {
         print.main();
         verify = false; 
@@ -53,21 +83,7 @@ public class Code {
         return menstruatedDays;
     } 
 
-    public void fertilePeriod() {
-        date = insertDate();
-
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(date);
-        calendar.add(Calendar.DAY_OF_YEAR, 7);
-        Date datePlusSeven = calendar.getTime();
-
-        calendar.setTime(date);
-        calendar.add(Calendar.DAY_OF_YEAR, 11);
-        Date datePlusEleven = calendar.getTime();
-        
-        print.fertile();
-        System.out.println(sdf.format(datePlusSeven) + "" + sdf.format(datePlusEleven));
-    }
+    
 
 
 }
